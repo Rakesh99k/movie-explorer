@@ -4,7 +4,7 @@ import MovieCard from '../components/MovieCard';
 
 
 function Watchlist() {
-  const { watchlist } = useContext(WatchlistContext);
+  const { watchlist, removeFromWatchlist } = useContext(WatchlistContext);
 
   return (
     <div style={{ padding: '2rem' }}>
@@ -21,6 +21,7 @@ function Watchlist() {
               date={movie.release_date}
               id={movie.id}
               isAdded={true}
+              onRemove={() => removeFromWatchlist(movie.id)}
             />
           ))}
         </div>
