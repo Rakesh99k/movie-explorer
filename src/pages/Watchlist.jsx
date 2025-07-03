@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { WatchlistContext } from '../context/WatchlistContext';
 import MovieCard from '../components/MovieCard';
 
+
 function Watchlist() {
   const { watchlist } = useContext(WatchlistContext);
 

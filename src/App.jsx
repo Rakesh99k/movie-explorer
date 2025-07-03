@@ -5,6 +5,7 @@ import { WatchlistContext } from './context/WatchlistContext';
 import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
 import MovieDetails from './pages/MovieDetails';
+import Watchlist from './pages/Watchlist';
 
 
 function App(){
@@ -48,6 +49,8 @@ function App(){
       } />
       
       <Route path="/movie/:id" element={<MovieDetails />} />
+      <Route path="/watchlist" element={<Watchlist />} />
+
     </Routes>
   </div>
 );
