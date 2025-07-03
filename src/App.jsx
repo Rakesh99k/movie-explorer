@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Navbar from './components/Navbar';
 import MovieCard from './components/MovieCard';
+import { WatchlistContext } from './context/WatchlistContext';
 import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
 import MovieDetails from './pages/MovieDetails';
 
 
 function App(){
-  const [watchlist, setWatchlist] = useState([]);
   const [movies, setMovies] = useState([]);
+  const { watchlist, addToWatchlist } = useContext(WatchlistContext);
+
 
   useEffect(() => {
   const fetchMovies = async () => {
@@ -24,12 +26,6 @@ function App(){
 
   fetchMovies();
 }, []);
-
-const addToWacthlist = (movie) => {
-  if(!watchlist.find(item => item.id === movie.id)){
-    setWatchlist([...watchlist,movie]);
-  }
-}
 
   return (
   <div>
