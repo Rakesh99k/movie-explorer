@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import MovieCard from './components/MovieCard';
 import axios from 'axios';
+import { Routes, Route } from 'react-router-dom';
+import MovieDetails from './pages/MovieDetails';
+
 
 function App(){
   const [watchlist, setWatchlist] = useState([]);
@@ -29,24 +32,30 @@ const addToWacthlist = (movie) => {
 }
 
   return (
-    <div>
-      <Navbar/>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-  {movies.map(movie => (
-    <MovieCard 
-      key={movie.id}
-      title={movie.title}
-      poster={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-    date={movie.release_date}
-      onAdd={() => addToWacthlist(movie)}
-      isAdded = {watchlist.find(item => item.id === movie.id)}
-    />
-  ))}
-</div>
+  <div>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          {movies.map(movie => (
+            <MovieCard 
+              key={movie.id}
+              title={movie.title}
+              poster={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              date={movie.release_date}
+              onAdd={() => addToWatchlist(movie)}
+              isAdded={watchlist.find(item => item.id === movie.id)}
+              id={movie.id}
+            />
+          ))}
+        </div>
+      } />
+      
+      <Route path="/movie/:id" element={<MovieDetails />} />
+    </Routes>
+  </div>
+);
 
-
-    </div>
-  );
 }
 
 export default App;
