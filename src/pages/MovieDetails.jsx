@@ -22,22 +22,38 @@ function MovieDetails() {
   }, [id]);
 
   if (!movie) {
-    return <p style={{ padding: '2rem' }}>Loading movie details...</p>;
+    return <p style={{ padding: '2rem', color: '#00f6ff', textShadow: '0 0 8px #00f6ff' }}>Loading movie details...</p>;
   }
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <Link to="/" style={{ textDecoration: 'none' }}>⬅️ Back to Home</Link>
-      <h2>{movie.title}</h2>
-      <img 
-        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+    <div
+      style={{
+        padding: '2rem',
+        background: 'linear-gradient(135deg, #000 70%, #00f6ff22 100%)',
+        borderRadius: '24px',
+        boxShadow: '0 0 32px #00f6ff44',
+        color: '#00f6ff',
+        maxWidth: '600px',
+        margin: '2rem auto',
+      }}
+    >
+      <Link to="/" style={{ textDecoration: 'none', color: '#00f6ff', textShadow: '0 0 8px #00f6ff', fontWeight: 'bold', fontSize: '1.1rem' }}>
+        ⬅️ Back to Home
+      </Link>
+      <h2 style={{ marginTop: '1rem', color: '#00f6ff', textShadow: '0 0 16px #00f6ff' }}>{movie.title}</h2>
+      <img
+        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
-        style={{ width: '300px', borderRadius: '8px' }} 
+        style={{ width: '300px', borderRadius: '16px', boxShadow: '0 0 24px #00f6ff88', border: '2px solid #00f6ff', margin: '1rem 0' }}
       />
-      <p><strong>Release Date:</strong> {movie.release_date}</p>
-      <p><strong>Rating:</strong> ⭐ {movie.vote_average}</p>
-      <p><strong>Overview:</strong></p>
-      <p>{movie.overview}</p>
+      <p style={{ fontWeight: 'bold', fontSize: '1.1em', margin: '0.5rem 0' }}>
+        Release Date: <span style={{ color: '#fff', textShadow: '0 0 8px #00f6ff' }}>{movie.release_date}</span>
+      </p>
+      <p style={{ fontWeight: 'bold', fontSize: '1.1em', margin: '0.5rem 0' }}>
+        Rating: <span style={{ color: '#fff', textShadow: '0 0 8px #00f6ff' }}>⭐ {movie.vote_average}</span>
+      </p>
+      <p style={{ fontWeight: 'bold', margin: '0.5rem 0' }}>Overview:</p>
+      <p style={{ color: '#fff', textShadow: '0 0 8px #00f6ff', marginBottom: '0' }}>{movie.overview}</p>
     </div>
   );
 }
