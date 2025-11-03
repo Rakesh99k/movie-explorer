@@ -7,12 +7,22 @@ function Watchlist() {
   const { watchlist, removeFromWatchlist } = useContext(WatchlistContext);
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h2>📺 Your Watchlist</h2>
+    <div
+      style={{
+        padding: '2rem',
+        background: 'linear-gradient(135deg, #000 70%, #00f6ff22 100%)',
+        borderRadius: '24px',
+        boxShadow: '0 0 32px #00f6ff44',
+        color: '#00f6ff',
+        maxWidth: '900px',
+        margin: '2rem auto',
+      }}
+    >
+      <h2 style={{ color: '#00f6ff', textShadow: '0 0 16px #00f6ff' }}>📺 Your Watchlist</h2>
       {watchlist.length === 0 ? (
-        <p>No movies added yet!</p>
+        <p style={{ color: '#fff', textShadow: '0 0 8px #00f6ff' }}>No movies added yet!</p>
       ) : (
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
           {watchlist.map(movie => (
             <MovieCard
               key={movie.id}
