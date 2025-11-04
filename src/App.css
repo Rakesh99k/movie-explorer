@@ -37,13 +37,33 @@
   }
 }
 
+
 .card {
   padding: 2em;
-  background: rgba(0, 0, 0, 0.7);
-  border: 2px solid #00f6ff;
+  background: linear-gradient(135deg, rgba(0,0,0,0.6) 60%, rgba(0,246,255,0.12) 100%);
+  border: 2px solid;
+  border-image: linear-gradient(90deg, #00f6ff 0%, #000 100%) 1;
   border-radius: 16px;
-  box-shadow: 0 0 24px #00f6ff44;
+  box-shadow: 0 0 24px #00f6ff44, 0 4px 32px #000a;
   color: #00f6ff;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s, border-image 0.3s;
+}
+.card:hover {
+  box-shadow: 0 0 48px #00f6ffcc, 0 8px 48px #000c;
+  border-image: linear-gradient(90deg, #00f6ff 0%, #0ff 100%) 1;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 1em;
+    width: 90vw;
+    min-width: 0;
+    margin: 1em auto;
+  }
 }
 
 .read-the-docs {
