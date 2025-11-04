@@ -4,16 +4,12 @@ import { Link } from 'react-router-dom';
 function MovieCard({ title, poster, date, onAdd, onRemove, isAdded, id }) {
   return (
     <div
+      className="card"
       style={{
-        border: '2px solid #00f6ff',
-        padding: '1.2rem',
-        borderRadius: '16px',
         width: '220px',
         margin: '1.2rem',
-        background: 'linear-gradient(135deg, #000 70%, #00f6ff22 100%)',
         textAlign: 'center',
-        boxShadow: '0 0 32px #00f6ff44',
-        color: '#00f6ff',
+        position: 'relative',
         transition: 'box-shadow 0.2s',
       }}
     >
