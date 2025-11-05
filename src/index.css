@@ -12,21 +12,34 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 a {
-  font-weight: 500;
-  color: #00f6ff;
-  text-decoration: inherit;
-  text-shadow: 0 0 8px #00f6ff;
+  transition: text-shadow 0.3s, color 0.3s;
 }
 a:hover {
+  font-family: 'Orbitron', 'Avenir', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
   color: #fff;
-  text-shadow: 0 0 16px #00f6ff;
+  text-shadow: 0 0 24px #00f6ff, 0 0 32px #00f6ff99;
+  animation: neon-pulse 1.2s infinite alternate;
+}
+
+@keyframes neon-pulse {
+  0% {
+    text-shadow: 0 0 24px #00f6ff, 0 0 32px #00f6ff99;
+  }
+  100% {
+    text-shadow: 0 0 48px #00f6ff, 0 0 64px #00f6ffcc;
+  }
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+
   background: #000000;
 }
 
@@ -36,6 +49,7 @@ h1 {
   color: #00f6ff;
   text-shadow: 0 0 24px #00f6ff;
 }
+
 
 button {
   border-radius: 8px;
@@ -48,14 +62,25 @@ button {
   color: #00f6ff;
   box-shadow: 0 0 12px #00f6ff44;
   cursor: pointer;
-  transition: border-color 0.25s, box-shadow 0.25s;
+  transition: border-color 0.25s, box-shadow 0.25s, color 0.25s;
+  animation: neon-glow 1.5s infinite alternate;
 }
 button:hover {
   border-color: #fff;
-  box-shadow: 0 0 24px #00f6ff;
+  box-shadow: 0 0 24px #00f6ff, 0 0 32px #00f6ff99;
   color: #fff;
+  animation: neon-glow 0.7s infinite alternate;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto #00f6ff;
+}
+
+@keyframes neon-glow {
+  0% {
+    box-shadow: 0 0 12px #00f6ff44, 0 0 0px #00f6ff00;
+  }
+  100% {
+    box-shadow: 0 0 32px #00f6ff, 0 0 24px #00f6ff99;
+  }
 }
