@@ -21,8 +21,14 @@ function MovieDetails() {
     fetchMovieDetails();
   }, [id]);
 
+
   if (!movie) {
-    return <p style={{ padding: '2rem', color: '#00f6ff', textShadow: '0 0 8px #00f6ff' }}>Loading movie details...</p>;
+    return (
+      <div style={{ padding: '2rem', textAlign: 'center' }}>
+        <div className="neon-loader" style={{ margin: '2rem auto' }}></div>
+        <p style={{ color: '#00f6ff', textShadow: '0 0 8px #00f6ff', marginTop: '1rem' }}>Loading movie details...</p>
+      </div>
+    );
   }
 
   return (
