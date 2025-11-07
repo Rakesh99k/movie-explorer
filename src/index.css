@@ -35,12 +35,51 @@ a:hover {
   }
 }
 
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-
   background: #000000;
+}
+
+/* Neon-styled scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #00f6ff 0%, #000 100%);
+  border-radius: 8px;
+  box-shadow: 0 0 8px #00f6ff99;
+  border: 2px solid #00f6ff;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #0ff 0%, #00f6ff 100%);
+  box-shadow: 0 0 16px #00f6ffcc;
+}
+
+/* Neon loader spinner */
+.neon-loader {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border: 4px solid #00f6ff44;
+  border-top: 4px solid #00f6ff;
+  border-radius: 50%;
+  animation: neon-spin 1s linear infinite, neon-glow 1.5s infinite alternate;
+  box-shadow: 0 0 24px #00f6ff99;
+}
+
+@keyframes neon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 h1 {
