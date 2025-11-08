@@ -29,31 +29,29 @@ function App(){
 }, []);
 
   return (
-  <div>
-    <Navbar />
-    <Routes>
-      <Route path="/" element={
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-          {movies.map(movie => (
-            <MovieCard 
-              key={movie.id}
-              title={movie.title}
-              poster={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              date={movie.release_date}
-              onAdd={() => addToWatchlist(movie)}
-              isAdded={watchlist.find(item => item.id === movie.id)}
-              id={movie.id}
-            />
-          ))}
-        </div>
-      } />
-      
-      <Route path="/movie/:id" element={<MovieDetails />} />
-      <Route path="/watchlist" element={<Watchlist />} />
-
-    </Routes>
-  </div>
-);
+    <div style={{ background: '#000', minHeight: '100vh' }}>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            {movies.map(movie => (
+              <MovieCard 
+                key={movie.id}
+                title={movie.title}
+                poster={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                date={movie.release_date}
+                onAdd={() => addToWatchlist(movie)}
+                isAdded={watchlist.find(item => item.id === movie.id)}
+                id={movie.id}
+              />
+            ))}
+          </div>
+        } />
+        <Route path="/movie/:id" element={<MovieDetails />} />
+        <Route path="/watchlist" element={<Watchlist />} />
+      </Routes>
+    </div>
+  );
 
 }
 
