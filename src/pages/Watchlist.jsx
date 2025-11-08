@@ -10,7 +10,7 @@ function Watchlist() {
     <div
       style={{
         padding: '2rem',
-        background: 'linear-gradient(135deg, #000 70%, #00f6ff22 100%)',
+        background: '#000',
         borderRadius: '24px',
         boxShadow: '0 0 32px #00f6ff44',
         color: '#00f6ff',
