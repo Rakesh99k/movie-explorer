@@ -66,6 +66,29 @@
   }
 }
 
-.read-the-docs {
+
+.footer {
+  width: 100%;
+  padding: 1.5em 0;
+  background: linear-gradient(90deg, #000 60%, #00f6ff 100%);
   color: #00f6ff;
+  text-align: center;
+  font-family: 'Orbitron', 'Avenir', Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+  box-shadow: 0 0 24px #00f6ff44;
+  border-top: 2px solid #00f6ff;
+}
+
+.footer a {
+  color: #00f6ff;
+  margin: 0 0.5em;
+  text-decoration: none;
+  font-size: 1.3em;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+.footer a:hover, .footer a:focus {
+  color: #fff;
+  text-shadow: 0 0 12px #00f6ff;
+  outline: none;
 }

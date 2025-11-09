@@ -29,27 +29,40 @@ function App(){
 }, []);
 
   return (
-    <div style={{ background: '#000', minHeight: '100vh' }}>
+    <div style={{ background: '#000', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
-      <Routes>
-        <Route path="/" element={
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            {movies.map(movie => (
-              <MovieCard 
-                key={movie.id}
-                title={movie.title}
-                poster={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                date={movie.release_date}
-                onAdd={() => addToWatchlist(movie)}
-                isAdded={watchlist.find(item => item.id === movie.id)}
-                id={movie.id}
-              />
-            ))}
-          </div>
-        } />
-        <Route path="/movie/:id" element={<MovieDetails />} />
-        <Route path="/watchlist" element={<Watchlist />} />
-      </Routes>
+      <div style={{ flex: 1 }}>
+        <Routes>
+          <Route path="/" element={
+            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+              {movies.map(movie => (
+                <MovieCard 
+                  key={movie.id}
+                  title={movie.title}
+                  poster={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  date={movie.release_date}
+                  onAdd={() => addToWatchlist(movie)}
+                  isAdded={watchlist.find(item => item.id === movie.id)}
+                  id={movie.id}
+                />
+              ))}
+            </div>
+          } />
+          <Route path="/movie/:id" element={<MovieDetails />} />
+          <Route path="/watchlist" element={<Watchlist />} />
+        </Routes>
+      </div>
+      <footer className="footer">
+        <span>Made with 💙 Neon by Movie Explorer</span>
+        <span style={{ marginLeft: '1em' }}>
+          <a href="https://github.com/Rakesh99k/movie-explorer" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i className="fa fa-github" aria-hidden="true"></i> GitHub
+          </a>
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <i className="fa fa-twitter" aria-hidden="true"></i> Twitter
+          </a>
+        </span>
+      </footer>
     </div>
   );
 
