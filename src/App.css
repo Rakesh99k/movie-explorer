@@ -1,10 +1,26 @@
 
+
+body {
+  background: linear-gradient(120deg, #000 60%, #00f6ff 100%);
+  min-height: 100vh;
+  animation: bg-move 8s ease-in-out infinite alternate;
+}
+
+@keyframes bg-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background: #000;
+  background: transparent;
   min-height: 100vh;
 }
 
@@ -38,6 +54,7 @@
 }
 
 
+
 .card {
   padding: 2em;
   background: linear-gradient(135deg, rgba(0,0,0,0.6) 60%, rgba(0,246,255,0.12) 100%);
@@ -50,11 +67,12 @@
   -webkit-backdrop-filter: blur(12px) saturate(180%);
   position: relative;
   overflow: hidden;
-  transition: box-shadow 0.3s, border-image 0.3s;
+  transition: box-shadow 0.3s, border-image 0.3s, transform 0.3s;
 }
 .card:hover {
   box-shadow: 0 0 48px #00f6ffcc, 0 8px 48px #000c;
   border-image: linear-gradient(90deg, #00f6ff 0%, #0ff 100%) 1;
+  transform: scale(1.03) rotate(-1deg);
 }
 
 @media (max-width: 600px) {
@@ -65,6 +83,7 @@
     margin: 1em auto;
   }
 }
+
 
 
 .footer {
@@ -78,6 +97,16 @@
   letter-spacing: 2px;
   box-shadow: 0 0 24px #00f6ff44;
   border-top: 2px solid #00f6ff;
+  animation: footer-glow 2s infinite alternate;
+}
+
+@keyframes footer-glow {
+  0% {
+    box-shadow: 0 0 24px #00f6ff44;
+  }
+  100% {
+    box-shadow: 0 0 48px #00f6ffcc;
+  }
 }
 
 .footer a {
