@@ -1,3 +1,18 @@
+input[type="text"], input[type="search"], input[type="email"], input[type="password"] {
+  background: #000;
+  color: #00f6ff;
+  border: 2px solid #00f6ff;
+  border-radius: 8px;
+  padding: 0.6em 1em;
+  font-size: 1em;
+  box-shadow: 0 0 12px #00f6ff44;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+input:focus {
+  outline: none;
+  border-color: #0ff;
+  box-shadow: 0 0 24px #00f6ffcc;
+}
 
 
 body {
@@ -88,21 +103,44 @@ body {
 
 .footer {
   width: 100%;
-  padding: 1.5em 0;
-  background: linear-gradient(90deg, #000 60%, #00f6ff 100%);
+  padding: 2em;
+  background: linear-gradient(135deg, rgba(0,0,0,0.6) 60%, rgba(0,246,255,0.12) 100%);
+  border: 2px solid;
+  border-image: linear-gradient(90deg, #00f6ff 0%, #000 100%) 1;
+  border-radius: 16px;
+  box-shadow: 0 0 24px #00f6ff44, 0 4px 32px #000a;
   color: #00f6ff;
-  text-align: center;
-  font-family: 'Orbitron', 'Avenir', Helvetica, Arial, sans-serif;
-  font-size: 1.1em;
-  letter-spacing: 2px;
-  box-shadow: 0 0 24px #00f6ff44;
-  border-top: 2px solid #00f6ff;
-  animation: footer-glow 2s infinite alternate;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s, border-image 0.3s, transform 0.3s;
+  opacity: 0;
+  animation: fade-in-card 1s forwards;
 }
 
-@keyframes footer-glow {
+.card:hover {
+  box-shadow: 0 0 48px #00f6ffcc, 0 8px 48px #000c;
+  border-image: linear-gradient(90deg, #00f6ff 0%, #0ff 100%) 1;
+  transform: scale(1.03) rotate(-1deg);
+  animation: button-pulse 0.7s infinite alternate;
+}
+
+@keyframes button-pulse {
   0% {
     box-shadow: 0 0 24px #00f6ff44;
+
+
+@keyframes fade-in-card {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
   }
   100% {
     box-shadow: 0 0 48px #00f6ffcc;
