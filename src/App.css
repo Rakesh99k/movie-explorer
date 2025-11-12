@@ -1,3 +1,32 @@
+.card img {
+  border: 2px solid #00f6ff;
+  border-radius: 12px;
+  box-shadow: 0 0 24px #00f6ff88, 0 0 8px #00f6ff;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+.card img:hover {
+  box-shadow: 0 0 48px #00f6ffcc, 0 0 16px #0ff;
+  border-color: #0ff;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 24px #00f6ff44;
+  background: linear-gradient(90deg, #000 60%, #00f6ff 100%);
+}
+h1, h2, h3 {
+  animation: heading-neon 2s infinite alternate;
+}
+
+@keyframes heading-neon {
+  0% {
+    text-shadow: 0 0 24px #00f6ff, 0 0 8px #0ff;
+  }
+  100% {
+    text-shadow: 0 0 48px #00f6ffcc, 0 0 16px #0ff;
+  }
+}
 input[type="text"], input[type="search"], input[type="email"], input[type="password"] {
   background: #000;
   color: #00f6ff;
