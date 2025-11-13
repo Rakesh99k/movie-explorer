@@ -28,6 +28,20 @@ function App(){
   fetchMovies();
 }, []);
 
+  // Back to Top button logic
+  const [showTop, setShowTop] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowTop(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div style={{ background: '#000', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
@@ -63,6 +77,11 @@ function App(){
           </a>
         </span>
       </footer>
+      {showTop && (
+        <button className="back-to-top" onClick={scrollToTop} title="Back to Top">
+          ↑
+        </button>
+      )}
     </div>
   );
 
