@@ -1,3 +1,29 @@
+/* Floating Back to Top Button */
+.back-to-top {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 999;
+  background: linear-gradient(90deg, #00f6ff 60%, #0ff 100%);
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  box-shadow: 0 0 24px #00f6ffcc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  transition: box-shadow 0.3s, opacity 0.3s, background 0.3s;
+}
+.back-to-top:hover {
+  box-shadow: 0 0 48px #00f6ffcc, 0 0 24px #0ff;
+  opacity: 1;
+  background: linear-gradient(90deg, #0ff 60%, #00f6ff 100%);
+}
 .card img {
   border: 2px solid #00f6ff;
   border-radius: 12px;
