@@ -11,6 +11,13 @@ import Watchlist from './pages/Watchlist';
 function App(){
   const [movies, setMovies] = useState([]);
   const { watchlist, addToWatchlist } = useContext(WatchlistContext);
+  const [toast, setToast] = useState("");
+
+  // Show toast for 2.5s
+  const showToast = (msg) => {
+    setToast(msg);
+    setTimeout(() => setToast(""), 2500);
+  };
 
 
   useEffect(() => {
@@ -55,7 +62,10 @@ function App(){
                   title={movie.title}
                   poster={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   date={movie.release_date}
-                  onAdd={() => addToWatchlist(movie)}
+                  onAdd={() => {
+                    addToWatchlist(movie);
+                    showToast("Added to Watchlist!");
+                  }}
                   isAdded={watchlist.find(item => item.id === movie.id)}
                   id={movie.id}
                 />
@@ -81,6 +91,9 @@ function App(){
         <button className="back-to-top" onClick={scrollToTop} title="Back to Top">
           ↑
         </button>
+      )}
+      {toast && (
+        <div className="neon-toast">{toast}</div>
       )}
     </div>
   );
