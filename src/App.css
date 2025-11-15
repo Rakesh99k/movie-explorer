@@ -235,7 +235,11 @@ body {
   overflow: hidden;
   transition: box-shadow 0.3s, border-image 0.3s, transform 0.3s;
   opacity: 0;
-  animation: fade-in-card 1s forwards;
+  animation: fade-in-card 1s forwards, footer-pulse 2.5s infinite alternate;
+@keyframes footer-pulse {
+  0% { box-shadow: 0 0 24px #00f6ff44, 0 4px 32px #000a; }
+  100% { box-shadow: 0 0 48px #00f6ffcc, 0 8px 48px #0ff; }
+}
 }
 
 .card:hover {
