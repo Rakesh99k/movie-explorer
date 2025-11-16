@@ -9,6 +9,15 @@ import Watchlist from './pages/Watchlist';
 
 
 function App(){
+  // Theme mode state: 'dark' (black/neon) or 'light' (white/purple)
+  const [theme, setTheme] = useState('dark');
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
   const [movies, setMovies] = useState([]);
   const { watchlist, addToWatchlist } = useContext(WatchlistContext);
   const [toast, setToast] = useState("");
@@ -50,8 +59,8 @@ function App(){
   };
 
   return (
-    <div style={{ background: '#000', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Navbar />
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <div style={{ flex: 1 }}>
         <Routes>
           <Route path="/" element={
@@ -89,7 +98,7 @@ function App(){
       </footer>
       {showTop && (
         <button className="back-to-top" onClick={scrollToTop} title="Back to Top">
-          ↑
+          
         </button>
       )}
       {toast && (

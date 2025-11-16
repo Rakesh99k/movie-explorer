@@ -1,15 +1,43 @@
 
+
 :root {
-  font-family: 'Orbitron', 'Avenir', Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color-scheme: dark;
-  color: #00f6ff;
-  background-color: #000000;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --main-bg: #000;
+  --main-color: #00f6ff;
+  --accent: #0ff;
+  --card-bg: rgba(0,0,0,0.6);
+  --card-border: #00f6ff;
+  --footer-bg: rgba(0,0,0,0.6);
+  --footer-border: #00f6ff;
+  --navbar-bg: linear-gradient(90deg, #000 60%, #00f6ff 100%);
+  --navbar-link: #00f6ff;
+  --navbar-link-hover: #fff;
+  --scrollbar-thumb: linear-gradient(135deg, #00f6ff 0%, #000 100%);
+  --loader-border: #00f6ff;
+  --button-bg: #000;
+  --button-color: #00f6ff;
+  --button-border: #00f6ff;
+  --shadow: #00f6ff44;
+  --font-family: 'Orbitron', 'Avenir', Helvetica, Arial, sans-serif;
+}
+
+[data-theme="light"] {
+  --main-bg: #fff;
+  --main-color: #a259ff;
+  --accent: #fff;
+  --card-bg: rgba(255,255,255,0.7);
+  --card-border: #a259ff;
+  --footer-bg: rgba(255,255,255,0.7);
+  --footer-border: #a259ff;
+  --navbar-bg: linear-gradient(90deg, #fff 60%, #a259ff 100%);
+  --navbar-link: #a259ff;
+  --navbar-link-hover: #fff;
+  --scrollbar-thumb: linear-gradient(135deg, #a259ff 0%, #fff 100%);
+  --loader-border: #a259ff;
+  --button-bg: #fff;
+  --button-color: #a259ff;
+  --button-border: #a259ff;
+  --shadow: #a259ff44;
+  --font-family: 'Orbitron', 'Avenir', Helvetica, Arial, sans-serif;
 }
 
 
@@ -40,7 +68,9 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #000000;
+  background: var(--main-bg);
+  color: var(--main-color);
+  font-family: var(--font-family);
 }
 
 /* Neon-styled scrollbar */
@@ -85,34 +115,34 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  color: #00f6ff;
-  text-shadow: 0 0 24px #00f6ff;
+  color: var(--main-color);
+  text-shadow: 0 0 24px var(--main-color);
 }
 
 
 button {
   border-radius: 8px;
-  border: 2px solid #00f6ff;
+  border: 2px solid var(--button-border);
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #000;
-  color: #00f6ff;
-  box-shadow: 0 0 12px #00f6ff44;
+  font-family: var(--font-family);
+  background-color: var(--button-bg);
+  color: var(--button-color);
+  box-shadow: 0 0 12px var(--shadow);
   cursor: pointer;
   transition: border-color 0.25s, box-shadow 0.25s, color 0.25s;
   animation: neon-glow 1.5s infinite alternate;
 }
 button:hover {
-  border-color: #fff;
-  box-shadow: 0 0 24px #00f6ff, 0 0 32px #00f6ff99;
-  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 0 24px var(--main-color), 0 0 32px var(--shadow);
+  color: var(--accent);
   animation: neon-glow 0.7s infinite alternate;
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto #00f6ff;
+  outline: 4px auto var(--main-color);
 }
 
 @keyframes neon-glow {
