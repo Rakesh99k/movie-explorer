@@ -88,15 +88,16 @@
   opacity: 1;
   background: linear-gradient(90deg, #0ff 60%, #00f6ff 100%);
 }
+/* Card image keeps neon border */
 .card img {
-  border: 2px solid #00f6ff;
+  border: 2px solid #a259ff;
   border-radius: 12px;
-  box-shadow: 0 0 24px #00f6ff88, 0 0 8px #00f6ff;
+  box-shadow: 0 0 24px #a259ff88, 0 0 8px #fff;
   transition: box-shadow 0.3s, border-color 0.3s;
 }
 .card img:hover {
-  box-shadow: 0 0 48px #00f6ffcc, 0 0 16px #0ff;
-  border-color: #0ff;
+  box-shadow: 0 0 48px #a259ffcc, 0 0 16px #fff;
+  border-color: #fff;
 }
 .navbar {
   position: sticky;
@@ -189,24 +190,56 @@ body {
 
 
 
+/* Card background stays, but text and buttons get purple/white neon theme */
+/* Card with subtle purple/white theme, no neon */
 .card {
   padding: 2em;
-  background: linear-gradient(135deg, rgba(0,0,0,0.6) 60%, rgba(0,246,255,0.12) 100%);
-  border: 2px solid;
-  border-image: linear-gradient(90deg, #00f6ff 0%, #000 100%) 1;
+  background: #fff;
+  border: 2px solid #a259ff;
   border-radius: 16px;
-  box-shadow: 0 0 24px #00f6ff44, 0 4px 32px #000a;
-  color: #00f6ff;
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  color: #a259ff;
   position: relative;
   overflow: hidden;
-  transition: box-shadow 0.3s, border-image 0.3s, transform 0.3s;
+  box-shadow: none;
+  transition: border-color 0.3s, transform 0.3s;
 }
 .card:hover {
-  box-shadow: 0 0 48px #00f6ffcc, 0 8px 48px #000c;
-  border-image: linear-gradient(90deg, #00f6ff 0%, #0ff 100%) 1;
+  border-color: #fff;
   transform: scale(1.03) rotate(-1deg);
+}
+.card h3, .card p {
+  color: #a259ff;
+  text-shadow: 0 0 24px #a259ff, 0 0 8px #fff;
+}
+.card h3 {
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+.card p {
+  margin: 0.5rem 0;
+  font-size: 0.95em;
+}
+.card button {
+  padding: 0.5rem 0.8rem;
+  background-color: #fff;
+  color: #a259ff;
+  border: 2px solid #a259ff;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  box-shadow: 0 0 12px #a259ff44;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+.card button:disabled {
+  background-color: #a259ff;
+  color: #fff;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.card button:hover:not(:disabled) {
+  background-color: #a259ff;
+  color: #fff;
 }
 
 @media (max-width: 600px) {
