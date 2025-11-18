@@ -109,6 +109,10 @@
 h1, h2, h3 {
   animation: heading-neon 2s infinite alternate;
 }
+:root[data-theme='light'] h1, :root[data-theme='light'] h2, :root[data-theme='light'] h3 {
+  color: var(--purple-main);
+  text-shadow: 0 0 24px var(--purple-accent), 0 0 8px #fff;
+}
 
 @keyframes heading-neon {
   0% {
