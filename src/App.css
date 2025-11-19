@@ -198,22 +198,24 @@ body {
 /* Card with subtle purple/white theme, no neon */
 .card {
   padding: 2em;
-  background: #fff;
+  background: linear-gradient(135deg, #f5f0ff 0%, #e9d5ff 60%, #a259ff 120%);
   border: 2px solid #a259ff;
   border-radius: 16px;
-  color: #a259ff;
+  color: #7c3aed;
   position: relative;
   overflow: hidden;
-  box-shadow: none;
-  transition: border-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 18px rgba(162,89,255,0.15);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 .card:hover {
-  border-color: #fff;
-  transform: scale(1.03) rotate(-1deg);
+  border-color: #7c3aed;
+  box-shadow: 0 8px 32px rgba(162,89,255,0.25);
+  transform: scale(1.04) translateY(-4px);
 }
 .card h3, .card p {
-  color: #a259ff;
-  text-shadow: 0 0 24px #a259ff, 0 0 8px #fff;
+  color: #7c3aed;
+  text-shadow: 0 0 12px #e9d5ff, 0 0 4px #fff;
+  font-weight: 600;
 }
 .card h3 {
   margin: 0.5rem 0;
@@ -225,25 +227,26 @@ body {
 }
 .card button {
   padding: 0.5rem 0.8rem;
-  background-color: #fff;
-  color: #a259ff;
+  background-color: #a259ff;
+  color: #fff;
   border: 2px solid #a259ff;
   border-radius: 8px;
   cursor: pointer;
   margin-top: 0.5rem;
   box-shadow: 0 0 12px #a259ff44;
   font-weight: bold;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 .card button:disabled {
-  background-color: #a259ff;
-  color: #fff;
+  background-color: #e9d5ff;
+  color: #a259ff;
   cursor: not-allowed;
   box-shadow: none;
 }
 .card button:hover:not(:disabled) {
-  background-color: #a259ff;
+  background-color: #7c3aed;
   color: #fff;
+  box-shadow: 0 0 16px #a259ff;
 }
 
 @media (max-width: 600px) {
