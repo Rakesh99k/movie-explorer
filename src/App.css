@@ -198,19 +198,19 @@ body {
 /* Card with subtle purple/white theme, no neon */
 .card {
   padding: 2em;
-  background: linear-gradient(135deg, #f5f0ff 0%, #e9d5ff 60%, #a259ff 120%);
+  background: linear-gradient(135deg, #f5f0ff 0%, #e9d5ff 40%, #a259ff 100%);
   border: 2px solid #a259ff;
   border-radius: 16px;
   color: #7c3aed;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 18px rgba(162,89,255,0.15);
+  box-shadow: 0 4px 24px rgba(162,89,255,0.18), 0 0 0 4px #e9d5ff44;
   transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 .card:hover {
   border-color: #7c3aed;
-  box-shadow: 0 8px 32px rgba(162,89,255,0.25);
-  transform: scale(1.04) translateY(-4px);
+  box-shadow: 0 12px 40px rgba(162,89,255,0.28), 0 0 0 6px #a259ff44;
+  transform: scale(1.06) translateY(-6px);
 }
 .card h3, .card p {
   color: #7c3aed;
@@ -246,7 +246,8 @@ body {
 .card button:hover:not(:disabled) {
   background-color: #7c3aed;
   color: #fff;
-  box-shadow: 0 0 16px #a259ff;
+  box-shadow: 0 0 24px #a259ff, 0 0 8px #e9d5ff;
+  transform: scale(1.07);
 }
 
 @media (max-width: 600px) {
