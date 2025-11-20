@@ -106,6 +106,15 @@
   box-shadow: 0 2px 24px #00f6ff44;
   background: linear-gradient(90deg, #000 60%, #00f6ff 100%);
 }
+:root[data-theme='light'] h1, :root[data-theme='light'] h2, :root[data-theme='light'] h3 {
+  color: var(--purple-main);
+  text-shadow: 0 0 32px var(--purple-accent), 0 0 12px #e9d5ff, 0 0 4px #fff;
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--purple-main), var(--purple-accent), #e9d5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 h1, h2, h3 {
   animation: heading-neon 2s infinite alternate;
 }
